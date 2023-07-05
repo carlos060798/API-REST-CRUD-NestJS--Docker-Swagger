@@ -26,7 +26,7 @@ function AuthProvaider({ children }) {
       };
       try {
         const { data } = await axios(
-          "http://localhost:4000/api/veterinario/perfil",
+          "https://api-veterinarios.vercel.app/api/veterinario/perfil",
           config
         ); // hacemos la peticion al backend
 
@@ -61,7 +61,7 @@ function AuthProvaider({ children }) {
       },
     };
     try {
-      const url = `http://localhost:4000/api/veterinario/perfil/${datos._id}`;
+      const url = `https://api-veterinarios.vercel.app/api/veterinario/perfil/${datos._id}`;
       const { data } = await axios.put(url, datos, config); // hacemos la peticion al backend
 
       return {
@@ -91,7 +91,7 @@ function AuthProvaider({ children }) {
     };
 
     try {
-      const url = `http://localhost:4000/api/veterinario/actualizar-password`;
+      const url = `https://api-veterinarios.vercel.app/api/veterinario/actualizar-password`;
       const { data } = await axios.put(url, datos, config); // hacemos la peticion al backend
       console.log(data.msg);
 

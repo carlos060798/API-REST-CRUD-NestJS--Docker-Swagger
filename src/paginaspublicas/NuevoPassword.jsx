@@ -15,7 +15,7 @@ function NuevoPass() {
     const ComprobarToken = async () => {
       try {
         // consulta ala Api para validar el token
-        const url = `http://localhost:4000/api/veterinario/olvidarPassword/${token}`;
+        const url = `https://api-veterinarios.vercel.app/api/veterinario/olvidarPassword/${token}`;
         await axios(url); // hacemos la peticion al backend
         setAlerta({
           msg: "Ingresa  la nueva Contraseña",
@@ -42,7 +42,7 @@ function NuevoPass() {
      }
 
      try{ // hacemos la peticion al backend para cambiar la contraseña
-     const url =`http://localhost:4000/api/veterinario/olvidarPassword/${token}`
+     const url =`https://api-veterinarios.vercel.app/api/veterinario/olvidarPassword/${token}`
         const {data}= await axios.post(url,{password});
 
         setAlerta({msg:data.msg});

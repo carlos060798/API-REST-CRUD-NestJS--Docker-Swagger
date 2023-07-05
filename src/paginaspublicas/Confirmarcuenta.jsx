@@ -13,7 +13,7 @@ function ConfirmarCuenta() {
   useEffect(() => { // useEffect para confirmar la cuenta
     const confirmarCuenta = async () => {
       try {
-        const url = `http://localhost:4000/api/veterinario/confirmar/${id}`; // url para confirmar la cuenta dada del backend
+        const url = `https://api-veterinarios.vercel.app/veterinario/confirmar/${id}`; // url para confirmar la cuenta dada del backend
         const { data } = await axios(url); // hacemos la peticion al backend
         setCuentaConfirmada(true); // si todo sale bien cambiamos el state de cuenta confirmada a true
         setAlerta({ msg: data.msg }); // mostramos la alerta de cuenta confirmada

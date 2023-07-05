@@ -19,7 +19,7 @@ const handleenviarEmail=async(e)=>{ // funcion para enviar el email
         return;
     }  
      try { // hacemos la peticion post con axios
-        const url='http://localhost:4000/api/veterinario/olvidarPassword';
+        const url='https://api-veterinarios.vercel.app/api/veterinario/olvidarPassword';
         const  {data} = await axios.post(url,{email}); 
         setAlerta({msg:data.msg,});
      } catch (err) {

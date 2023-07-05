@@ -38,7 +38,7 @@ function Registar() {
     // crear el usuario en la api
 
     try { // hacemos la peticion post con axios
-      const url = "http://localhost:4000/api/veterinario";
+      const url = "https://api-veterinarios.vercel.app/api/veterinario";
       await axios.post(url, { nombre, email, password });
       setAlerta({ msg: "Cuenta creada correctamentamente", error: false });
     } catch (err) {

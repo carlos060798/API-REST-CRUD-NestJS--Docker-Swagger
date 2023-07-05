@@ -26,7 +26,7 @@ const PacientesProvaider = ({ children }) => {
             Authorization: `Bearer ${token}`,
           },
         };
-        const url = "http://localhost:4000/api/pacientes"; //url para el axios
+        const url = "https://api-veterinarios.vercel.app/api/pacientes"; //url para el axios
         const { data } = await axios.get(url, config); //hacemos la peticion get con axios
         setPacientes(data); //agregamos los pacientes al state
       } catch (err) {
@@ -50,7 +50,7 @@ const PacientesProvaider = ({ children }) => {
     if (paciente.id) {
       try{
            //si el paciente tiene un id es porque ya existe y se va a editar
-      const url = `http://localhost:4000/api/pacientes/${paciente.id}`; //url para el axios
+      const url = `https://api-veterinarios.vercel.app/api/pacientes/${paciente.id}`; //url para el axios
       const { data } = await axios.put(url, paciente, config); //hacemos la peticion post con axios
       const pacientesActualizados = pacientes.map(pacientestate => pacientestate._id === data._id ? data : pacientestate ); //recorremos los pacientes para buscar el que se edito
       setPacientes(pacientesActualizados); //actualizamos el state de los pacientes
@@ -61,7 +61,7 @@ const PacientesProvaider = ({ children }) => {
    
     } else {
       try {
-        const url = "http://localhost:4000/api/pacientes"; //url para el axios
+        const url = "https://api-veterinarios.vercel.app/api/pacientes"; //url para el axios
         const { data } = await axios.post(url, paciente, config); //hacemos la peticion post con axios
         const { createdAt, updatedAt, __v, ...pacienteNuevo } = data; //desestructuramos la respuesta de la peticion post
         setPacientes([pacienteNuevo, ...pacientes]); //agregamos el nuevo paciente al state
@@ -90,7 +90,7 @@ const PacientesProvaider = ({ children }) => {
             Authorization: `Bearer ${token}`,
           },
         }  
-        const url = `http://localhost:4000/api/pacientes/${id}`;
+        const url = `https://api-veterinarios.vercel.app/api/pacientes/${id}`;
         const {data} = await axios.delete(url, config); //hacemos la peticion delete con axios
         const pacientesActualizados = pacientes.filter(pacientestate => pacientestate._id !== id); //recorremos los pacientes para buscar el que se elimino
         setPacientes(pacientesActualizados); //actualizamos el state de los pacientes

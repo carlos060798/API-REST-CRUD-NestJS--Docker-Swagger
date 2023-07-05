@@ -29,7 +29,7 @@ const handleLogin = async(e)=>{ // funcion para manejar el login
   }
   // HACEMOS LA CONSULTA DEL API
   try{
-  const url='http://localhost:4000/api/veterinario/login'; // url para hacer la peticion al backend
+  const url='https://api-veterinarios.vercel.app/veterinario/login'; // url para hacer la peticion al backend
   const {data}=await axios.post(url,{email,password}); // hacemos la peticion al backend
   console.log(data);
   localStorage.setItem('token',data.token); // guardamos el token en el localstorage
